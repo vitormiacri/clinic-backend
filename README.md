@@ -34,6 +34,10 @@ or
 yarn dev
 ```
 
+## Database
+
+Os dados da aplicação são armazenados no arquivo **database.json** dentro do diretório _src_.
+
 ## Testes
 
 Para executar os testes, acesse a pasta do projeto e execute o seguinte comando:
@@ -43,3 +47,11 @@ npm run test
 or
 yarn test
 ```
+
+## Endpoints
+
+Para visualizar os endpoints da API, importe o arquivo **Clinic API.postman_collection.json** para o Postman.
+
+## Documentação
+
+Para mais detalhes da API, acesse a documentação completa [aqui](https://documenter.getpostman.com/view/9471819/SW7W5VFi)

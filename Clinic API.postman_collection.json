@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "aa4d0589-6eee-46ea-b0cb-baf36d9a1ea6",
+		"name": "Clinic API",
+		"description": "# Clinic API\n\nAPI desenvolvida em Node.js para registrar agendamentos de horários de uma clínica. Possui as seguintes funcionalidades:\n\n    - Cadastrar regras de horários para atendimento\n    - Apagar regra de horário para atendimento\n    - Listar regras de horários para atendimento\n    - Listar horários disponíveis dentro de um intervalo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INSERT (day)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"period\": \"day\",\n\t\"days\": [],\n\t\"date\": \"10-11-2019\",\n\t\"intervals\": [\n\t\t[\n\t\t\t\"07:00\",\n\t\t\t\"09:00\"\n\t\t],\n\t\t[\n\t\t\t\"11:30\",\n\t\t\t\"16:30\"\n\t\t]\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/schedule/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						""
+					]
+				},
+				"description": "Cadastrar regras de horários para atendimento de um dia específico\nExemplo do corpo que deve ser enviado:\n\n```\n{\n\t\"period\": \"day\",\n\t\"days\": [],\n\t\"date\": \"10-11-2019\",\n\t\"intervals\": [\n\t\t[\n\t\t\t\"07:00\",\n\t\t\t\"09:00\"\n\t\t],\n\t\t[\n\t\t\t\"11:30\",\n\t\t\t\"16:30\"\n\t\t]\n\t]\n}\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT (daily)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"period\": \"daily\",\n    \"days\": [],\n    \"date\": \"\",\n    \"intervals\": [\n      [\n        \"07:00\",\n        \"10:00\"\n      ],\n      [\n        \"12:30\",\n        \"15:00\"\n      ]\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/schedule/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						""
+					]
+				},
+				"description": "Cadastro de regras de horários para atendimento diário\n"
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT (weekly)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"period\": \"weekly\",\n    \"days\": [\n      \"monday\",\n      \"wednesday\"\n    ],\n    \"date\": \"\",\n    \"intervals\": [\n      [\n        \"10:00\",\n        \"12:00\"\n      ],\n      [\n        \"17:00\",\n        \"18:00\"\n      ]\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/schedule/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						""
+					]
+				},
+				"description": "Cadastro de regras de horários para atendimento semanal"
+			},
+			"response": []
+		},
+		{
+			"name": "LIST ALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/schedule/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						""
+					]
+				},
+				"description": "Lista todos os agendamentos cadastrados."
+			},
+			"response": []
+		},
+		{
+			"name": "LIST AVAILABLE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/schedule/available/?start_date=05-11-2019&end_date=05-11-2019",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						"available",
+						""
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "05-11-2019"
+						},
+						{
+							"key": "end_date",
+							"value": "05-11-2019"
+						}
+					]
+				},
+				"description": "Lista todos os agendamentos cadastrados considerando um intervalo de data informado."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/schedule/b7ec4f37-f635-4a4b-bfa8-3694789fa5f8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"schedule",
+						"b7ec4f37-f635-4a4b-bfa8-3694789fa5f8"
+					]
+				},
+				"description": "Apagar regra de horário para atendimento.\n- O campo ID é requerido"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "11978b2c-3fb7-404a-90de-aa929d3dd59f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "69e277f5-542d-4027-8801-3ef01ce0d90d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
