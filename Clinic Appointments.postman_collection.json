@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "aa4d0589-6eee-46ea-b0cb-baf36d9a1ea6",
+		"name": "Clinic Appointments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/appointments/7ddb10f3-5874-432d-80ff-ad89ed1de87a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						"7ddb10f3-5874-432d-80ff-ad89ed1de87a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT (day)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"period\": \"day\",\n\t\"days\": [],\n\t\"date\": \"12-11-2019\",\n\t\"intervals\": [\n\t\t{\n\t\t\t\"start\": \"08:00\",\n\t\t\t\"end\": \"12:00\"\n\t\t},\n\t\t{\n\t\t\t\"start\": \"13:30\",\n\t\t\t\"end\": \"18:00\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT (daily)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"period\": \"daily\",\n\t\"days\": [],\n\t\"date\": \"\",\n\t\"intervals\": [\n\t\t{\n\t\t\t\"start\": \"07:00\",\n\t\t\t\"end\": \"10:00\"\n\t\t},\n\t\t{\n\t\t\t\"start\": \"12:30\",\n\t\t\t\"end\": \"16:00\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT (weekly)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"period\": \"weekly\",\n\t\"days\": [\"tuesday\", \"thursday\"],\n\t\"date\": \"\",\n\t\"intervals\": [\n\t\t{\n\t\t\t\"start\": \"09:00\",\n\t\t\t\"end\": \"14:00\"\n\t\t},\n\t\t{\n\t\t\t\"start\": \"15:30\",\n\t\t\t\"end\": \"18:30\"\n\t\t},\n\t\t{\n\t\t\t\"start\": \"19:30\",\n\t\t\t\"end\": \"21:00\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST ALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST AVAILABLE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/appointments/available/?start_date=05-11-2019&end_date=15-11-2019",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"appointments",
+						"available",
+						""
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "05-11-2019"
+						},
+						{
+							"key": "end_date",
+							"value": "15-11-2019"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
