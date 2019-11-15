@@ -37,6 +37,7 @@ yarn dev
 ## Database
 
 Os dados da aplicação são armazenados no arquivo **database.json** dentro do diretório _src_.
+**ATENÇÃO:** O arquivo já possui alguns registros.
 
 ## Testes
 
@@ -50,7 +51,7 @@ yarn test
 
 ## Endpoints
 
-Para visualizar os endpoints da API, importe o arquivo **Clinic API.postman_collection.json** para o Postman.
+Para visualizar os endpoints da API, importe o arquivo **Clinic API.postman_collection.json** para o [Postman](https://www.getpostman.com/).
 
 ## Documentação
 
